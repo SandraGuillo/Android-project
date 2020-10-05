@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ChronometreActivity" android:id="@+id/demarreChrono">
+
+    <ImageButton
+            android:layout_width="153dp"
+            android:layout_height="89dp" app:srcCompat="@android:drawable/ic_media_play"
+            android:id="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="60dp" android:layout_marginStart="60dp"
+            android:contentDescription="@string/chrono" android:background="#255FC3" android:tint="#0AF613"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
