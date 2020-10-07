@@ -1,7 +1,10 @@
 package com.example.pelemele;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -9,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-
+    static int PHOTO ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,14 +46,25 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "chronometre",Toast.LENGTH_SHORT).show();
         });
         Log.i("MainActivity","une info");
+        ImageButton photo = (ImageButton) findViewById(R.id.photo);
+        photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (i.resolveActivity(getPackageManager()) != null){
+                    startActivityForResult(i, PHOTO);
+                }
+            }
+        });
 
-        //ImageButton chrono = (ImageButton) findViewById(R.id.imageButton);
-        //Button chrono = (Button) findViewById(R.id.imageButton);
-        /*chrono.setOnClickListener((v) -> {
 
-            Intent ic = new Intent(MainActivity.this, ChronometreActivity.class);
-            startActivity(ic);
-        });*/
-
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent date){
+        if (requestCode == PHOTO && resultCode == RESULT_OK){
+            Bundle extras = date.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            //Toast.makeText(PHOTO,"la photo a été prise",Toast.LENGTH_SHORT).show();//ne fonctionne pas
+        }
     }
     }
