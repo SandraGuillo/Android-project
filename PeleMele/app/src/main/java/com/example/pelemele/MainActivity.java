@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
             Intent ic = new Intent(MainActivity.this, ChronometreActivity.class);
             startActivity(ic);
+            Toast.makeText(MainActivity.this, "chronometre",Toast.LENGTH_SHORT).show();
         });
         Log.i("MainActivity","une info");
 

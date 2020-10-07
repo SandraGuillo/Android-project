@@ -10,8 +10,14 @@
     <ImageButton
             android:layout_width="153dp"
             android:layout_height="89dp" app:srcCompat="@android:drawable/ic_media_play"
-            android:id="@+id/imageButton"
+            android:id="@+id/start"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="60dp" android:layout_marginStart="60dp"
             android:contentDescription="@string/chrono" android:background="#255FC3" android:tint="#0AF613"/>
+    <ImageButton
+            android:layout_width="153dp"
+            android:layout_height="89dp" app:srcCompat="@android:drawable/ic_media_pause"
+            android:id="@+id/stop" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="250dp"
+            android:layout_marginStart="60dp" android:background="#F44336"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
