@@ -10,6 +10,12 @@ import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class ChronometreActivity extends AppCompatActivity {
+    int heureStart ;
+    int minStart ;
+    int secStart ;
+    int heureStop ;
+    int minStop ;
+    int secStop ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,9 @@ public class ChronometreActivity extends AppCompatActivity {
         ImageButton demarrer = (ImageButton) findViewById(R.id.start);
         demarrer.setOnClickListener((v) -> {
             GregorianCalendar calendarStart = new GregorianCalendar();
+            heureStart = calendarStart.get(Calendar.HOUR_OF_DAY) ;
+            minStart = calendarStart.get(Calendar.MINUTE);
+            secStart = calendarStart.get(Calendar.SECOND) ;
             Toast.makeText(ChronometreActivity.this,"il est : "+ calendarStart.get(Calendar.HOUR_OF_DAY)+ " h " + calendarStart.get((Calendar.MINUTE))  +" min "+ calendarStart.get(Calendar.SECOND)+ " s ",Toast.LENGTH_SHORT).show();
         });
 
@@ -27,7 +36,10 @@ public class ChronometreActivity extends AppCompatActivity {
         ImageButton stop = (ImageButton) findViewById(R.id.stop);
         stop.setOnClickListener((v) -> {
             GregorianCalendar calendarStop = new GregorianCalendar();
-            Toast.makeText(ChronometreActivity.this," il est : "+calendarStop.get(Calendar.HOUR_OF_DAY)+ " h " + calendarStop.get((Calendar.MINUTE))  +" min "+ calendarStop.get(Calendar.SECOND)+ " s ",Toast.LENGTH_SHORT).show();
+            heureStop = calendarStop.get(Calendar.HOUR_OF_DAY);
+            minStop = calendarStop.get((Calendar.MINUTE));
+            secStop = calendarStop.get(Calendar.SECOND) ;
+            Toast.makeText(ChronometreActivity.this," " + calculChrono(heureStart,heureStop,minStart,minStop,secStart,secStop) + "sec se sont écoulées",Toast.LENGTH_SHORT).show();
         });
     }
 

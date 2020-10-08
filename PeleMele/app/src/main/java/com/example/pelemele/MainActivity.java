@@ -79,24 +79,20 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == PHOTO && resultCode == RESULT_OK) {
             Bundle extras = date.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            //Toast.makeText(PHOTO,"la photo a été prise",Toast.LENGTH_SHORT).show();//ne fonctionne pas
+            Toast.makeText(MainActivity.this,"la photo a été prise. Hauteur : "+imageBitmap.getHeight(),Toast.LENGTH_SHORT).show();//ne fonctionne pas
             FileOutputStream fos = null;
             try {
                 fos = openFileOutput("image.data", MODE_PRIVATE);
+                imageBitmap.compress(Bitmap.CompressFormat.PNG,100, fos);
+                fos.flush();
+                fos.close();
+
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-            }
-            imageBitmap.compress(Bitmap.CompressFormat.PNG,100, fos);
-            try {
-                fos.flush();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            try {
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
 
         }
     }
