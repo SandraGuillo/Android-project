@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -68,7 +69,14 @@ public class MainActivity extends AppCompatActivity {
         //bouton qui permet d'acceder a la galerie photo
         ImageButton galerie = (ImageButton) findViewById(R.id.galerie);
         galerie.setOnClickListener((v) -> {
-            //a faire
+            try {
+                FileInputStream fis = openFileInput("image.data");
+                Bitmap bm = BitmapFactory.decodeStream(fis);
+                ImageView iv = (ImageView)findViewById(R.id.galerie);
+                iv.setImageBitmap(bm);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
 
         });
 
