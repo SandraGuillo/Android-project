@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             /*Intent ic = new Intent(MainActivity.this, ChronometreActivity.class);
             startActivity(ic);*/
         });
+        //bouton qui permet d'acceder au petit jeu
         ImageButton chrono = (ImageButton) findViewById(R.id.chrono);
         chrono.setOnClickListener((v) -> {
 
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "chronometre", Toast.LENGTH_SHORT).show();
         });
         Log.i("MainActivity", "une info");
+
+        //bouton qui permet d'acceder a l'appareil photo
         ImageButton photo = (ImageButton) findViewById(R.id.photo);
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //bouton qui permet d'acceder a la galerie photo
         ImageButton galerie = (ImageButton) findViewById(R.id.galerie);
         galerie.setOnClickListener((v) -> {
             //a faire
@@ -107,9 +110,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        //permet de gerer la fermeture de l'appli
         if (id == R.id.quitter) {
             finish();
             return true;
+        }
+        //permet d'acceder aux contacts
+        if (id == R.id.appeler) {
+            //a completer et modifier
         }
         return  false;
     }

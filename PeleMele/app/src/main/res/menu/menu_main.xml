@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="Quitter" android:id="@+id/quitter" android:icon="@android:color/holo_purple"/>
+    <item android:title="Appeler un joueur" android:id="@+id/appeler" android:icon="@android:color/holo_purple"/>
 </menu>

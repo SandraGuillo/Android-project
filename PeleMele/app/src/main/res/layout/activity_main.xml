@@ -12,14 +12,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="92dp"
             android:layout_marginEnd="150dp"
             android:background="#FFDB29"
             android:text="Pikachu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.521"/>
     <Button
             android:id="@+id/bulbi"
             android:layout_width="wrap_content"
@@ -81,4 +80,10 @@
             android:id="@+id/galerie"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp" android:layout_marginEnd="20dp" android:background="#ED9411"/>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_star"
+            android:id="@+id/imageButton"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp" android:layout_marginBottom="20dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
