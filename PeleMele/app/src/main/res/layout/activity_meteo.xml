@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".MeteoActivity">
 
-    <ImageView
+    <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp" app:srcCompat="@android:drawable/star_big_on"
             android:id="@+id/meteo"

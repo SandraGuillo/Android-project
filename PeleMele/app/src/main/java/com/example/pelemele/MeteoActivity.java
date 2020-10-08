@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.widget.ImageButton;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
@@ -26,6 +27,7 @@ public class MeteoActivity extends AppCompatActivity {
             Location loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             double latitude = loc.getLatitude();
             double longitude = loc.getLongitude();
+            Toast.makeText(MeteoActivity.this, "latitude : " + latitude + " \nlongitude : "+longitude,Toast.LENGTH_SHORT).show();
             //ASyncTask<String,> a finir
         });
     }

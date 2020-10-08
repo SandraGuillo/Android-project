@@ -53,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(ic);
             Toast.makeText(MainActivity.this, "chronometre", Toast.LENGTH_SHORT).show();
         });
+        ImageButton meteo = (ImageButton) findViewById(R.id.meteo);
+        meteo.setOnClickListener((v) -> {
+            Intent ic = new Intent(MainActivity.this,MeteoActivity.class);
+            startActivity(ic);
+
+        });
         Log.i("MainActivity", "une info");
 
         //bouton qui permet d'acceder a l'appareil photo
