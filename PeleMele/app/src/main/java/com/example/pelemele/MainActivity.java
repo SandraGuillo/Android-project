@@ -85,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+        Button tacheLongue = (Button)findViewById(R.id.tachelonge);
+        tacheLongue.setOnClickListener((v) -> {
+            Intent ic = new Intent(MainActivity.this, LongActivity.class);
+            startActivity(ic);
+        });
+
 
     }
 

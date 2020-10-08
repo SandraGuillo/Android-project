@@ -4,12 +4,14 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import org.json.JSONObject;
 
 public class MeteoActivity extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class MeteoActivity extends AppCompatActivity {
             double latitude = loc.getLatitude();
             double longitude = loc.getLongitude();
             Toast.makeText(MeteoActivity.this, "latitude : " + latitude + " \nlongitude : "+longitude,Toast.LENGTH_SHORT).show();
-            //ASyncTask<String,> a finir
+            //AsyncTask<String,Void, JSONObject> tache meteo = ;
         });
     }
 }
